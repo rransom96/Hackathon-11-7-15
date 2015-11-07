@@ -1,10 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+{% extends 'hackathon_app/base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
 
-</body>
-</html>
+{% block content %}
+{# <div class="jumbotron">#}
+{#    <div class="row">#}
+{#        <div class="col-xs-12 col-sm-10">#}
+            <h2 class="text-center login_title">All Posts</h2>
+            {% for post in post_list %}
+                <div class="jumbotron">
+                <i class="fa fa-post fa-4x text-right"></i>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-10">
+
+                            <ul>
+                                <li class="bookmark_list text-left">{{ post.user }}</li>
+                                <li class="bookmark_list text-left"><a href="{% url 'bookmark_detail' post.id %}">
+                                    {{ post.title }} </a></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <p class="text-center"><a class='glowBtn active center'>View</a></p>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <p class="text-center"><a class='glowBtn active center'>Edit</a></p>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <p class="text-center"><a class='glowBtn active center'>Delete</a></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if is_paginated %}
+                {% if page_obj.has_previous %}
+                    <a href="{% url 'list_bookmarks' %}?page={{ page_obj.previous_page_number }}"><-Prev</a>
+                {% endif %}
+            {{ page_obj }}
+                {% if page_obj.has_next %}
+                    <a href="{% url 'list_bookmarks' %}?page={{ page_obj.next_page_number }}">Next -></a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="col-xs-12 col-sm-2">
+
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{% endblock %}
+

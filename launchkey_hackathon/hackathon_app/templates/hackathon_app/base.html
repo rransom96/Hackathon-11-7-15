@@ -1,10 +1,100 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title></title>
+{#    <link href="{% static 'css/main.css' %}" rel="stylesheet">#}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 
+
+    {% if user.is_authenticated %}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Politics App</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'post_create' %}">Create Post<span class="sr-only">(current)</span></a></li>
+{#            <li><a href="{% url 'list_profile' %}">My Post</a></li>#}
+            <li><a href="{% url 'posts' %}">All Posts</a></li>
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Hello {{ user.username }} </a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+
+
+
+
+
+
+
+    {% else %}
+       <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Politcs App</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="{% url 'list_bookmarks' %}">New Political Debates</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+    {% endif %}
+
+      {% block content %}
+
+      {% endblock %}
+
+{#    <script src="{% static 'js/jquery.min.js' %}"></script>#}
+{#    <script src="{% static 'js/bootstrap.min.js' %}"#}
+{#    <script src="{% static 'js/main.js' %}"></script>#}
 </body>
 </html>
+
+
+

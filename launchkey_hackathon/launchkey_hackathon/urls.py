@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
 from users.views import CreateUser
-from hackathon_app.views import WelcomePage
+from hackathon_app.views import WelcomePage, ListPosts, CreatePost
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^logout/', 'django.contrib.auth.views.logout', {'next_page': "/"}, name='logout'),
+    url(r'^', include('django.contrib.auth.urls')),
     url(r'^register/', CreateUser.as_view(), name='register'),
-    url(r'^$', WelcomePage.as_view(), name="home" )
+    url(r'^$', WelcomePage.as_view(), name="home" ),
+    url(r'^posts/', ListPosts.as_view(), name="posts"),
+    url(r'^create/$', login_required(CreatePost.as_view()), name='post_create'),
 ]
