@@ -68,9 +68,9 @@ class Comment(models.Model):
     modified_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "User:{}, comment_text: {}, post_rel: {}, created_time: {}, last_modified".format(self.user,\
-                                                                                    self.comment_text, self.post_rel, \
-                                                                                    self.created_time, \
+        return "User:{}, comment_text: {}, post_rel: {}, created_time: {}, last_modified".format(self.user,
+                                                                                    self.comment_text, self.post_rel,
+                                                                                    self.created_time,
                                                                                     self.modified_time)
 
 class PostUpvote(models.Model):
