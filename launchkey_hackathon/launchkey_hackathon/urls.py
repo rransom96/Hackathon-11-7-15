@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from users.views import CreateUser
+from hackathon_app.views import WelcomePage
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^register/', CreateUser.as_view(), name='register'),
+    url(r'^$', WelcomePage.as_view(), name="home" )
 ]

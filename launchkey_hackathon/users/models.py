@@ -1,5 +1,4 @@
 from django.db import models
-import launchkey
 from django.contrib.auth.models import User
 
 
