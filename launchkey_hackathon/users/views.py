@@ -7,9 +7,10 @@ from django.views.generic import CreateView
 import launchkey
 from launchkey_hackathon.settings import BASE_DIR
 from django.contrib.auth import authenticate, login
-from django.template.context_processors import request
+# from django.template.context_processors import request
 import os
 from django.core.exceptions import ObjectDoesNotExist
+
 
 
 class CreateUser(CreateView):
@@ -20,7 +21,7 @@ class CreateUser(CreateView):
     template_name = 'users/register.html'
 
 
-class Login(request):
+def Login(request):
     username = request.POST['username']
     password = request.POST['password']
     app = '4910033767'
