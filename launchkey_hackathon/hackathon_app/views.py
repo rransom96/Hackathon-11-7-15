@@ -27,7 +27,7 @@ class ListPosts(ListView):
 class CreatePost(CreateView):
     model = Post
     form_class = PostForm
-    success_url = reverse_lazy('list_bookmarks')
+    success_url = reverse_lazy('posts')
     template_name = 'hackathon_app/post_create.html'
 
     def form_valid(self, form):

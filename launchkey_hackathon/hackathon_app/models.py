@@ -36,7 +36,7 @@ class Post(models.Model):
     slug = models.SlugField()
     creation_time = models.DateTimeField(auto_now_add=True)
     modification_time = models.DateTimeField(auto_now=True)
-    mainpage_rel = models.ForeignKey(MainPage)
+    mainpage_rel = models.ForeignKey(MainPage, default=1)
 
 
     def is_recent(self):
