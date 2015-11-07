@@ -2,10 +2,10 @@
 {% load bootstrap3 %}
 {% load staticfiles %}
 
-
+{% block content %}
 
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<h1 class="login_title">Fredslist</h1>
+
 <form method="post" action="{% url 'login' %}" class="login-block">
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ next }}">
@@ -13,3 +13,5 @@
     {{ form.as_p }}
     <button type="submit" value="login">Submit</button>
 </form>
+
+{% endblock %}
