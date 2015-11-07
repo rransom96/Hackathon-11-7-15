@@ -37,6 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'hackathon_app',
+    'users',
+    'bootstrap3'
 )
 
 MIDDLEWARE_CLASSES = (
