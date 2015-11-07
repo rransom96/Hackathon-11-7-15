@@ -1,5 +1,4 @@
 from django.db import models
-import launchkey
 from django.contrib.auth.models import User
 
 
@@ -14,9 +13,9 @@ class Profile(models.Model):
     # Average down-votes
     # Total counts for comments and links
 
-    def post_karma(self):
-        k = self.user.post_set.karma().all()
-        return k
+    # def post_karma(self):
+    #     k = self.user.post_set.karma().all()
+    #     return k
 
     def comment_karma(self):
         pass
