@@ -15,7 +15,9 @@
 
                             <ul>
                                 <li class="bookmark_list text-left">{{ post.user }}</li>
-                                <li class="bookmark_list text-left">{{ post.title }}</li>
+                                <li class="bookmark_list text-left">
+                                    <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+                                </li>
 
 
 
