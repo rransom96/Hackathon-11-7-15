@@ -37,7 +37,7 @@ def Login(request):
                 confirm = api.authorize(username)
                 while True:
                     response = api.poll_request(confirm)
-                    time.sleep(90)
+                    time.sleep(10)
                     if api.is_authorized(confirm, response['auth']):
                         login(request, user)
                         break
