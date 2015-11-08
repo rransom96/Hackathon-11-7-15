@@ -1,3 +1,4 @@
+from django.contrib.auth.forms import AuthenticationForm
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -10,6 +11,7 @@ from launchkey_hackathon.settings import BASE_DIR
 from django.contrib.auth import authenticate, login
 import os
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.views import login
 
 
 
@@ -32,7 +34,7 @@ def Login(request):
         if user is not None:
             if user.is_active:
                 api = launchkey.API(app_key=app,private_key=private,app_secret=secret)
-                confirm = api.authorize(user)
+                confirm = api.authorize(username)
                 while True:
                     response = api.poll_request(confirm)
                     time.sleep(90)
@@ -46,4 +48,5 @@ def Login(request):
         else:
             raise ObjectDoesNotExist("account does not exist")
     else:
-        return render(request, template_name='registration/login.html')
+        return login(request)
+
