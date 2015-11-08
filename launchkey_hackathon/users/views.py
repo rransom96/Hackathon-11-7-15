@@ -1,25 +1,22 @@
-from django.core.urlresolvers import reverse_lazy
-from django.http import HttpResponse
-from django.shortcuts import render
+import os
+import django
+from django.contrib.auth import authenticate
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-import time
-from users.forms import UserCreateForm
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView
 import launchkey
+import time
 from launchkey_hackathon.settings import BASE_DIR
-from django.contrib.auth import authenticate, login
-import os
-from django.core.exceptions import ObjectDoesNotExist
-
+from django.contrib.auth.views import login
 
 
 class CreateUser(CreateView):
-
     model = User
-    form_class = UserCreateForm
+    form_class = UserCreationForm
     success_url = reverse_lazy('home')
     template_name = 'users/register.html'
-
 
 def Login(request):
     if request.method == 'POST':
@@ -35,9 +32,9 @@ def Login(request):
                 confirm = api.authorize(user)
                 while True:
                     response = api.poll_request(confirm)
-                    time.sleep(90)
+                    time.sleep(10)
                     if api.is_authorized(confirm, response['auth']):
-                        login(request, user)
+                        django.contrib.auth.login(request, user)
                         break
                     else:
                         pass
@@ -46,4 +43,4 @@ def Login(request):
         else:
             raise ObjectDoesNotExist("account does not exist")
     else:
-        return render(request, template_name='registration/login.html')
+        return login(request)
