@@ -3,5 +3,378 @@
 {% load staticfiles %}
 
 {% block content %}
-    homepage
+
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Political Voice</title>
+
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+<!-- font awesome -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="{% static '' %}" />
+
+<!-- animate.css -->
+<link rel="stylesheet" href="{% static 'assets/animate/animate.css' %}"  />
+<link rel="stylesheet" href="{% static 'assets/animate/set.css' %}" />
+
+<!-- gallery -->
+<link rel="stylesheet" href="{% static 'assets/gallery/blueimp-gallery.min.css' %}">
+
+<!-- favicon -->
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'images/favicon.ico' %}"  type="image/x-icon">
+
+
+<link rel="stylesheet" href="{% static 'assets/style.css' %}" >
+
+
+
+<body>
+{#<div class="topbar animated fadeInLeftBig"></div>#}
+{##}
+{#<!-- Header Starts -->#}
+{#<div class="navbar-wrapper">#}
+{#      <div class="container">#}
+{##}
+{#        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">#}
+{#          <div class="container">#}
+{#            <div class="navbar-header">#}
+{#              <!-- Logo Starts -->#}
+{#              <a class="navbar-brand" href="#home"><img src="{% static 'images/logo.png' %}" alt="logo"></a>#}
+{#              <!-- #Logo Ends -->#}
+{##}
+{##}
+{#              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">#}
+{#                <span class="sr-only">Toggle navigation</span>#}
+{#                <span class="icon-bar"></span>#}
+{#                <span class="icon-bar"></span>#}
+{#                <span class="icon-bar"></span>#}
+{#              </button>#}
+{##}
+{#            </div>#}
+{##}
+{##}
+{#            <!-- Nav Starts -->#}
+{#            <div class="navbar-collapse  collapse">#}
+{#              <ul class="nav navbar-nav navbar-right scroll">#}
+{#                 <li class="active"><a href="#works">Home</a></li>#}
+{#                 <li ><a href="#about">About</a></li>#}
+{#                 <li ><a href="#partners">Partners</a></li>#}
+{#                 <li ><a href="#contact">Contact</a></li>#}
+{#              </ul>#}
+{#            </div>#}
+{#            <!-- #Nav Ends -->#}
+{##}
+{#          </div>#}
+{#        </div>#}
+{##}
+{#      </div>#}
+{#    </div>#}
+{#<!-- #Header Starts -->#}
+
+
+
+
+
+
+
+<!-- works -->
+<div id="works"  class=" clearfix grid">
+    <figure class="effect-oscar  wowload fadeIn">
+        <img src="{% static 'images/portfolio/13.jpg' %}" alt="img01" class="por_img"/>
+        <figcaption>
+            <h2>Economy</h2>
+            <p>View what your politicians views on the economy  are<br>
+            <a href="{%  url 'posts' %}" title="1" data-gallery>View more</a></p>
+        </figcaption>
+    </figure>
+     <figure class="effect-oscar  wowload fadeInUp">
+        <img src="{% static 'images/portfolio/14.jpeg' %}"  alt="img01" class="por_img"/>
+        <figcaption>
+            <h2>Abortion</h2>
+            <p>View what your politicians views on abortion are<br>
+            <a href="{% static 'images/portfolio/15.png' %}" title="1" data-gallery>View more</a></p>
+        </figcaption>
+    </figure>
+     <figure class="effect-oscar  wowload fadeInUp">
+        <img src="{% static 'images/portfolio/15.png' %}"  alt="img01" class="por_img"/>
+        <figcaption>
+            <h2>Gender Equality</h2>
+            <p>View what your politicians views on gender equality are<br>
+            <a href="{% static 'images/portfolio/3.jpg' %}" title="1" data-gallery>View more</a></p>
+        </figcaption>
+    </figure>
+     <figure class="effect-oscar  wowload fadeInUp">
+        <img src="{% static 'images/portfolio/16.jpg' %}"  alt="img01" class="por_img"/>
+        <figcaption>
+            <h2>Race Equality</h2>
+            <p>View what your politicians views on race equality are<br>
+            <a href="{% static 'images/portfolio/4.jpg' %}" title="1" data-gallery>View more</a></p>
+        </figcaption>
+    </figure>
+     <figure class="effect-oscar  wowload fadeInUp">
+        <img src="{% static 'images/portfolio/17.jpeg' %}"  alt="img01" class="por_img"/>
+        <figcaption>
+            <h2>Marijuan Laws</h2>
+            <p>View what your politicians views on marijuan laws are<br>
+            <a href="{% static 'images/portfolio/5.jpg' %}" title="1" data-gallery>View more</a></p>
+        </figcaption>
+    </figure>
+
+     <figure class="effect-oscar  wowload fadeInUp">
+        <img src="{% static 'images/portfolio/18.jpg' %}"  alt="img01" class="por_img"/>
+        <figcaption>
+            <h2>Job Creation</h2>
+            <p>View what your politicians views on job creation are<br>
+            <a href="{% static 'images/portfolio/6.jpg' %}" title="1" data-gallery>View more</a></p>
+        </figcaption>
+    </figure>
+{#    <figure class="effect-oscar  wowload fadeInUp">#}
+{#        <img src="{% static 'images/portfolio/7.jpg' %}"  alt="img01"/>#}
+{#        <figcaption>#}
+{#            <h2>Chinese</h2>#}
+{#            <p>Lily likes to play with crayons and pencils<br>#}
+{#            <a href="{% static 'images/portfolio/7.jpg' %}" title="1" data-gallery>View more</a></p>#}
+{#        </figcaption>#}
+{#    </figure>#}
+{#    <figure class="effect-oscar  wowload fadeInUp">#}
+{#        <img src="{% static 'images/portfolio/8.jpg' %}" alt="img01"/>#}
+{#        <figcaption>#}
+{#            <h2>Dicrap</h2>#}
+{#            <p>Lily likes to play with crayons and pencils<br>#}
+{#            <a href="{% static 'images/portfolio/8.jpg' %}" title="1" data-gallery>View more</a></p>#}
+{#        </figcaption>#}
+{#    </figure>#}
+{#    <figure class="effect-oscar  wowload fadeInUp">#}
+{#        <img src="{% static 'images/portfolio/9.jpg' %}" alt="img01"/>#}
+{#        <figcaption>#}
+{#            <h2>Coffee</h2>#}
+{#            <p>Lily likes to play with crayons and pencils<br>#}
+{#            <a href="{% static 'images/portfolio/9.jpg' %}" title="1" data-gallery>View more</a></p>#}
+{#        </figcaption>#}
+{#    </figure>#}
+{#    <figure class="effect-oscar  wowload fadeInUp">#}
+{#        <img src="{% static 'images/portfolio/10.jpg' %}" alt="img01"/>#}
+{#        <figcaption>#}
+{#            <h2>cameras</h2>#}
+{#            <p>Lily likes to play with crayons and pencils<br>#}
+{#            <a href="{% static 'images/portfolio/10.jpg' %}" title="1" data-gallery>View more</a></p>#}
+{#        </figcaption>#}
+{#    </figure>#}
+{#    <figure class="effect-oscar  wowload fadeInUp">#}
+{#        <img src="{% static 'images/portfolio/11.jpg' %}" alt="img01"/>#}
+{#        <figcaption>#}
+{#            <h2>design</h2>#}
+{#            <p>Lily likes to play with crayons and pencils<br>#}
+{#            <a href="{% static 'images/portfolio/11.jpg' %}" title="1" data-gallery>View more</a></p>#}
+{#        </figcaption>#}
+{#    </figure>#}
+{#    <figure class="effect-oscar  wowload fadeInUp">#}
+{#        <img src="{% static 'images/portfolio/12.jpg' %}" alt="img01"/>#}
+{#        <figcaption>#}
+{#            <h2>studio</h2>#}
+{#            <p>Lily likes to play with crayons and pencils<br>#}
+{#            <a href="{% static 'images/portfolio/12.jpg' %}" title="1" data-gallery>View more</a></p>#}
+{#        </figcaption>#}
+{#    </figure>#}
+
+
+
+</div>
+<!-- works -->
+
+
+
+
+
+
+<!-- Cirlce Starts -->
+<div id="about"  class="container spacer about">
+<h2 class="text-center wowload fadeInUp">Political app that allows you to voice your opinion</h2>
+  <div class="row">
+  <div class="col-sm-6 wowload fadeInLeft">
+    <h4><i class="fa fa-flag"></i>Your Voice</h4>
+    <p>Finally an application that allows you to really make your voice heard, and make a difference in your
+    communiyt.  This is a platform strictly for political debate and conversation that allows you to directly talk
+    to the officials you wnat to talk to.</p>
+
+
+  </div>
+  <div class="col-sm-6 wowload fadeInRight">
+  <h4><i class="fa fa-comment"></i>Debate</h4>
+  <p>With this app you are free to immerse yourself in a plethora of political debates, either in your local city or nationally.
+  If you wish to actually conversate or start your own debate, make an account and login.</p>
+  </div>
+  </div>
+
+  <div class="process">
+  <h3 class="text-center wowload fadeInUp">Make A Difference in YOUR Government</h3>
+  <ul class="row text-center list-inline  wowload bounceInUp">
+      <li>
+            <span><i class="fa fa-history"></i><b>Research</b></span>
+        </li>
+        <li>
+            <span><i class="fa fa-question"></i><b>Ask Questions</b></span>
+        </li>
+        <li>
+            <span><i class="fa fa-comment"></i><b>Debate</b></span>
+        </li>
+        <li>
+            <span><i class="fa fa-eye"></i><b>Voice Your Views</b></span>
+        </li>
+        <li>
+            <span><i class="fa fa-smile-o"></i><b>Make a Difference</b></span>
+        </li>
+    </ul>
+  </div>
+</div>
+<!-- #Cirlce Ends -->
+
+
+
+<!-- About Starts -->
+<div class="highlight-info">
+<div class="overlay spacer">
+<div class="container">
+<div class="row text-center  wowload fadeInDownBig">
+  <div class="col-sm-3 col-xs-6">
+  <i class="fa fa-smile-o  fa-5x"></i><h4>890,00 Americans</h4>
+  </div>
+  <div class="col-sm-3 col-xs-6">
+  <i class="fa fa-black-tie  fa-5x"></i><h4>312 politicians</h4>
+  </div>
+  <div class="col-sm-3 col-xs-6">
+  <i class="fa fa-comments  fa-5x"></i><h4>1,013,702 Comments</h4>
+  </div>
+  <div class="col-sm-3 col-xs-6">
+  <i class="fa fa-map-marker fa-5x"></i><h4>120 Cities</h4>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<!-- About Ends -->
+
+
+
+
+
+
+
+
+{##}
+{#   <!-- Indicators -->#}
+{#   	<ol class="carousel-indicators">#}
+{#    <li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>#}
+{#    <li data-target="#carousel-testimonials" data-slide-to="1"></li>#}
+{#    <li data-target="#carousel-testimonials" data-slide-to="2"></li>#}
+{#  	</ol>#}
+{#  	<!-- Indicators -->#}
+{#  </div>#}
+
+
+
+    </div>
+  </div>
+
+
+
+<!-- team -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Contact Starts-->
+
+<!--Contact Ends-->
+
+
+
+<!-- Footer Starts -->
+<div class="footer text-center spacer">
+<p class="wowload flipInX"><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> <a href="#"><i class="fa fa-twitter fa-2x"></i></a> <a href="#"><i class="fa fa-flickr fa-2x"></i></a> </p>
+Copyright 2015 Political Voice. All rights reserved.
+</div>
+<!-- # Footer Ends -->
+<a href="#works" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>
+
+
+
+
+
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title">Title</h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+</div>
+
+
+
+<!-- jquery -->
+<script src="assets/jquery.js"></script>
+
+<!-- wow script -->
+<script src="assets/wow/wow.min.js"></script>
+
+
+<!-- boostrap -->
+<script src="assets/bootstrap/js/bootstrap.js" type="text/javascript" ></script>
+
+<!-- jquery mobile -->
+<script src="assets/mobile/touchSwipe.min.js"></script>
+<script src="assets/respond/respond.js"></script>
+
+<!-- gallery -->
+<script src="assets/gallery/jquery.blueimp-gallery.min.js"></script>
+
+<!-- custom script -->
+<script src="assets/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock %}

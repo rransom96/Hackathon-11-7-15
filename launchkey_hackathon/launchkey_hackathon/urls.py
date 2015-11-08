@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from users.views import CreateUser
-from hackathon_app.views import WelcomePage, ListPosts, CreatePost
+from hackathon_app.views import WelcomePage, ListPosts, CreatePost, EditPost, DeletePost, PostDetail
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -25,6 +25,10 @@ urlpatterns = [
     url(r'^', include('django.contrib.auth.urls')),
     url(r'^register/', CreateUser.as_view(), name='register'),
     url(r'^$', WelcomePage.as_view(), name="home" ),
+    url(r'^posts/(?P<pk>\d+)/$', PostDetail.as_view(),name='post_detail'),
     url(r'^posts/', ListPosts.as_view(), name="posts"),
+
     url(r'^create/$', login_required(CreatePost.as_view()), name='post_create'),
+    url(r'^update/(?P<pk>\d+)', EditPost.as_view(), name='bookmark_edit'),
+    url(r'^delete/(?P<pk>\d+)', DeletePost.as_view(), name='bookmark_delete'),
 ]

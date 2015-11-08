@@ -17,34 +17,78 @@
 
     {% if user.is_authenticated %}
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Politics App</a>
+{#    <nav class="navbar navbar-inverse">#}
+{#        <div class="container-fluid">#}
+{#        <div class="navbar-header">#}
+{#          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">#}
+{#            <span class="sr-only">Toggle navigation</span>#}
+{#            <span class="icon-bar"></span>#}
+{#            <span class="icon-bar"></span>#}
+{#            <span class="icon-bar"></span>#}
+{#          </button>#}
+{#          <a class="navbar-brand" href="#">Politics App</a>#}
+{#        </div>#}
+{##}
+{#        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">#}
+{#          <ul class="nav navbar-nav">#}
+{#            <li class="active"><a href="{% url 'post_create' %}">Create Post<span class="sr-only">(current)</span></a></li>#}
+{#            <li><a href="{% url 'list_profile' %}">My Post</a></li>#}
+{#            <li><a href="{% url 'posts' %}">All Posts</a></li>#}
+{##}
+{#          </ul>#}
+{##}
+{#          <ul class="nav navbar-nav navbar-right">#}
+{#            <li><a href="#">Hello {{ user.username }} </a></li>#}
+{#            <li><a href="{% url 'logout' %}">Logout</a></li>#}
+{##}
+{#          </ul>#}
+{#        </div><!-- /.navbar-collapse -->#}
+{#        </div><!-- /.container-fluid -->#}
+{#    </nav>#}
+
+
+
+        <div class="topbar animated fadeInLeftBig"></div>
+
+<!-- Header Starts -->
+<div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+          <div class="container">
+            <div class="navbar-header">
+              <!-- Logo Starts -->
+              <a class="navbar-brand" href="#home" style="font-size: 2em;">Politcal Voice</a>
+              <!-- #Logo Ends -->
+
+
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+            </div>
+
+
+            <!-- Nav Starts -->
+            <div class="navbar-collapse  collapse">
+              <ul class="nav navbar-nav navbar-right scroll">
+                 <li class="active"><a href="#works">Home</a></li>
+                 <li ><a href="#about">Political Issues</a></li>
+                 <li ><a href="{% url 'login' %}">Login</a></li>
+                 <li ><a href="{% url 'register' %}">Register</a></li>
+              </ul>
+            </div>
+            <!-- #Nav Ends -->
+
+          </div>
         </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="{% url 'post_create' %}">Create Post<span class="sr-only">(current)</span></a></li>
-{#            <li><a href="{% url 'list_profile' %}">My Post</a></li>#}
-            <li><a href="{% url 'posts' %}">All Posts</a></li>
-
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Hello {{ user.username }} </a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-
-          </ul>
-        </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+      </div>
+    </div>
+<!-- #Header Starts -->
 
 
 
@@ -56,33 +100,84 @@
 
 
     {% else %}
-       <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Politcs App</a>
+{#       <nav class="navbar navbar-inverse">#}
+{#        <div class="container-fluid">#}
+{#        <div class="navbar-header">#}
+{#          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">#}
+{#            <span class="sr-only">Toggle navigation</span>#}
+{#            <span class="icon-bar"></span>#}
+{#            <span class="icon-bar"></span>#}
+{#            <span class="icon-bar"></span>#}
+{#          </button>#}
+{#          <a class="navbar-brand" href="#">Politcs App</a>#}
+{#        </div>#}
+{##}
+{#        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">#}
+{#          <ul class="nav navbar-nav">#}
+{##}
+{#            <li><a href="{% url 'posts' %}">New Political Debates</a></li>#}
+{##}
+{#          </ul>#}
+{##}
+{#          <ul class="nav navbar-nav navbar-right">#}
+{#            <li><a href="{% url 'register' %}">Register</a></li>#}
+{#            <li><a href="{% url 'login' %}">Login</a></li>#}
+{##}
+{#          </ul>#}
+{#        </div><!-- /.navbar-collapse -->#}
+{#        </div><!-- /.container-fluid -->#}
+{#    </nav>#}
+
+
+
+
+
+
+
+
+
+
+        <div class="topbar animated fadeInLeftBig"></div>
+
+<!-- Header Starts -->
+<div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+          <div class="container">
+            <div class="navbar-header">
+              <!-- Logo Starts -->
+              <a class="navbar-brand" href="#home"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+              <!-- #Logo Ends -->
+
+
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+            </div>
+
+
+            <!-- Nav Starts -->
+            <div class="navbar-collapse  collapse">
+              <ul class="nav navbar-nav navbar-right scroll">
+                 <li class="active"><a href="#works">Home</a></li>
+                 <li ><a href="#about">Political Issues</a></li>
+                 <li ><a href="{% url 'login' %}">Login</a></li>
+                 <li ><a href="{% url 'register' %}">Register</a></li>
+              </ul>
+            </div>
+            <!-- #Nav Ends -->
+
+          </div>
         </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-
-            <li><a href="{% url 'posts' %}">New Political Debates</a></li>
-
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="{% url 'register' %}">Register</a></li>
-            <li><a href="{% url 'login' %}">Login</a></li>
-
-          </ul>
-        </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+      </div>
+    </div>
+<!-- #Header Starts -->
 
 
 
