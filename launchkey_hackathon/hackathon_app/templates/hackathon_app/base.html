@@ -77,8 +77,8 @@
               <ul class="nav navbar-nav navbar-right scroll">
                  <li class="active"><a href="#works">Home</a></li>
                  <li ><a href="#about">Political Issues</a></li>
-                 <li ><a href="{% url 'login' %}">Login</a></li>
-                 <li ><a href="{% url 'register' %}">Register</a></li>
+                 <li ><a href="{% url 'post_create' %}">Creat New Issue</a></li>
+                 <li ><a href="{% url 'logout' %}">Logout</a></li>
               </ul>
             </div>
             <!-- #Nav Ends -->
@@ -166,6 +166,7 @@
               <ul class="nav navbar-nav navbar-right scroll">
                  <li class="active"><a href="#works">Home</a></li>
                  <li ><a href="#about">Political Issues</a></li>
+                  <li ><a href="{% url 'post_create' %}">Create Issue</a></li>
                  <li ><a href="{% url 'login' %}">Login</a></li>
                  <li ><a href="{% url 'register' %}">Register</a></li>
               </ul>

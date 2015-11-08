@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^$', WelcomePage.as_view(), name="home" ),
     url(r'^posts/(?P<pk>\d+)/$', PostDetail.as_view(),name='post_detail'),
     url(r'^posts/', ListPosts.as_view(), name="posts"),
-    url(r'^create/$', login_required(CreatePost.as_view()), name='post_create'),
+    url(r'^create/$', CreatePost.as_view(), name='post_create'),
     url(r'^update/(?P<pk>\d+)', EditPost.as_view(), name='bookmark_edit'),
     url(r'^delete/(?P<pk>\d+)', DeletePost.as_view(), name='bookmark_delete'),
 ]
