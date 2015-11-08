@@ -18,10 +18,10 @@ class ListPosts(ListView):
     queryset = Post.objects.order_by('-creation_time')
     paginate_by = 5
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['page_load'] = timezone.now()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['page_load'] = timezone.now()
+    #     return context
 
 class PostDetail(DetailView):
     model = Post
