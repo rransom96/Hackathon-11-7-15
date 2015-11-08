@@ -1,15 +1,16 @@
-import os
 import django
-from django.contrib.auth import authenticate
+from django.contrib.auth import views
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView
 import launchkey
 import time
 from launchkey_hackathon.settings import BASE_DIR
-from django.contrib.auth.views import login
+from django.contrib.auth import authenticate
+import os
+from django.core.exceptions import ObjectDoesNotExist
+
 
 
 class CreateUser(CreateView):
@@ -18,7 +19,8 @@ class CreateUser(CreateView):
     success_url = reverse_lazy('home')
     template_name = 'users/register.html'
 
-def Login(request):
+
+def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -29,7 +31,7 @@ def Login(request):
         if user is not None:
             if user.is_active:
                 api = launchkey.API(app_key=app,private_key=private,app_secret=secret)
-                confirm = api.authorize(user)
+                confirm = api.authorize(username)
                 while True:
                     response = api.poll_request(confirm)
                     time.sleep(10)
@@ -43,4 +45,4 @@ def Login(request):
         else:
             raise ObjectDoesNotExist("account does not exist")
     else:
-        return login(request)
+        return views.login(request)

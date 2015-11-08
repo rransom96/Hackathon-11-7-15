@@ -1,7 +1,7 @@
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render, render_to_response
 from django.utils import timezone
-from django.views.generic import View, ListView, CreateView, DeleteView, UpdateView, DetailView
+from django.views.generic import View, ListView, CreateView
 from hackathon_app.models import Post
 from hackathon_app.forms import PostForm
 
@@ -23,9 +23,6 @@ class ListPosts(ListView):
     #     context['page_load'] = timezone.now()
     #     return context
 
-class PostDetail(DetailView):
-    model = Post
-    success_url = reverse_lazy('post_detail')
 
 class CreatePost(CreateView):
     model = Post
@@ -36,19 +33,6 @@ class CreatePost(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super(CreatePost, self).form_valid(form)
-
-
-
-class EditPost(UpdateView):
-    model = Post
-    form_class = PostForm
-    success_url = reverse_lazy('posts')
-    template_name_suffix = '_update_form'
-
-
-class DeletePost(DeleteView):
-    model = Post
-    success_url = reverse_lazy('posts')
 
 
 

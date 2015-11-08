@@ -2,18 +2,3 @@
 {% load bootstrap3 %}
 {% load staticfiles %}
 
-{% block content %}
-    <h2>Bookmark Detail</h2>
-
-    <ul>
-        <li>Title: {{ post.title }}</li>
-        <li>Author: {{ post.user.username }}</li>
-        <li>Message: {{ post.description }}</li>
-        <li>Posted at: {{ post.timestamp }}</li>
-    </ul>
-    {% if user.is_authenticated %}
-{#        <p><a class="btn btn-primary btn-block" href="{% url 'post_edit' post.id %}" role="button" style="display: inline-block;">Edit</a></p>#}
-{#        <p><a class="btn btn-danger btn-block" href="{% url 'post_delete' post.id %}" role="button" style="display: inline-block;">Delete</a></p>#}
-    {% endif %}
-
-{% endblock %}
