@@ -22,7 +22,7 @@ from hackathon_app.views import WelcomePage, ListPosts, CreatePost
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^logout/', 'django.contrib.auth.views.logout', {'next_page': "/"}, name='logout'),
-    url(r'^login/$', 'users.views.Login', name='login'),
+    url(r'^login/$', 'users.views.login', name='login'),
     url(r'^', include('django.contrib.auth.urls')),
     url(r'^register/', CreateUser.as_view(), name='register'),
     url(r'^$', WelcomePage.as_view(), name="home" ),

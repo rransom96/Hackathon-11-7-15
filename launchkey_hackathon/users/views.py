@@ -12,7 +12,6 @@ import os
 from django.core.exceptions import ObjectDoesNotExist
 
 
-
 class CreateUser(CreateView):
     model = User
     form_class = UserCreationForm
