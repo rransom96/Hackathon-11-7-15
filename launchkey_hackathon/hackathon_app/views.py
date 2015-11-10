@@ -6,6 +6,7 @@ from hackathon_app.models import Post, Issue
 from hackathon_app.forms import PostForm, IssueForm
 
 
+
 class WelcomePage(View):
     def get(self, request):
         return render(self.request, 'hackathon_app/homepage.html')
@@ -69,9 +70,11 @@ class ListPosts(ListView):
     #     return context
 
 
+
 class PostDetail(DetailView):
     model = Post
     success_url = reverse_lazy('post_detail')
+
 
 
 class CreatePost(CreateView):
@@ -83,6 +86,7 @@ class CreatePost(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super(CreatePost, self).form_valid(form)
+
 
 
 class EditPost(UpdateView):

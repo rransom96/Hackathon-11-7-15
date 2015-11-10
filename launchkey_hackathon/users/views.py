@@ -1,27 +1,26 @@
-from django.core.urlresolvers import reverse_lazy
-from django.http import HttpResponse
-from django.shortcuts import render
+import django
+from django.contrib.auth import views
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-import time
-from users.forms import UserCreateForm
+from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView
 import launchkey
+import time
 from launchkey_hackathon.settings import BASE_DIR
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
 import os
 from django.core.exceptions import ObjectDoesNotExist
 
 
 
 class CreateUser(CreateView):
-
     model = User
-    form_class = UserCreateForm
+    form_class = UserCreationForm
     success_url = reverse_lazy('home')
     template_name = 'users/register.html'
 
 
-def Login(request):
+def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -32,12 +31,12 @@ def Login(request):
         if user is not None:
             if user.is_active:
                 api = launchkey.API(app_key=app,private_key=private,app_secret=secret)
-                confirm = api.authorize(user)
+                confirm = api.authorize(username)
                 while True:
                     response = api.poll_request(confirm)
-                    time.sleep(90)
+                    time.sleep(10)
                     if api.is_authorized(confirm, response['auth']):
-                        login(request, user)
+                        django.contrib.auth.login(request, user)
                         break
                     else:
                         pass
@@ -46,4 +45,4 @@ def Login(request):
         else:
             raise ObjectDoesNotExist("account does not exist")
     else:
-        return render(request, template_name='registration/login.html')
+        return views.login(request)
