@@ -1,5 +1,7 @@
 .envrc
 .direnv
 .idea
+.sqlite3
 *.pyc
 .DS_Store
+db.sqlite3
