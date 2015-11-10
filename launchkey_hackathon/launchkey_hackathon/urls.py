@@ -17,7 +17,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from users.views import CreateUser
-from hackathon_app.views import WelcomePage, ListPosts, CreatePost, EditPost, DeletePost, PostDetail
+from hackathon_app.views import WelcomePage, ListPosts, CreatePost, EditPost, DeletePost, PostDetail, IssueDetail, \
+    ListIssues, CreateIssue, EditIssue, DeleteIssue
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -26,9 +27,16 @@ urlpatterns = [
     url(r'^', include('django.contrib.auth.urls')),
     url(r'^register/', CreateUser.as_view(), name='register'),
     url(r'^$', WelcomePage.as_view(), name="home" ),
+
+    url(r'^issues/(?P<pk>\d+)/$', IssueDetail.as_view(),name='issue_detail'),
+    url(r'^issues/', ListIssues.as_view(), name="issues"),
+    url(r'^create_issue/$', CreateIssue.as_view(), name='issue_create'),
+    url(r'^update_issue/(?P<pk>\d+)', EditIssue.as_view(), name='issue_edit'),
+    url(r'^delete_issue/(?P<pk>\d+)', DeleteIssue.as_view(), name='issue_delete'),
+
     url(r'^posts/(?P<pk>\d+)/$', PostDetail.as_view(),name='post_detail'),
     url(r'^posts/', ListPosts.as_view(), name="posts"),
-    url(r'^create/$', CreatePost.as_view(), name='post_create'),
-    url(r'^update/(?P<pk>\d+)', EditPost.as_view(), name='bookmark_edit'),
-    url(r'^delete/(?P<pk>\d+)', DeletePost.as_view(), name='bookmark_delete'),
+    url(r'^create_post/$', CreatePost.as_view(), name='post_create'),
+    url(r'^update_post/(?P<pk>\d+)', EditPost.as_view(), name='post_edit'),
+    url(r'^delete_post/(?P<pk>\d+)', DeletePost.as_view(), name='post_delete'),
 ]
