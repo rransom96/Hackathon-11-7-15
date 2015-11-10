@@ -107,3 +107,8 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = '/posts/'
+
+
+app = '4910033767'
+secret = '8p20rbc2urf9f9h4wgn6hzarp0wvc7zb'
+private = open(os.path.join(BASE_DIR, 'secret_key', 'private_key'), 'r').read()
