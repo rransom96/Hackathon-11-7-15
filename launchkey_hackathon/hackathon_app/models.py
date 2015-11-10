@@ -4,10 +4,14 @@ from django.db import models
 from django.utils import timezone
 
 
-class MainPage(models.Model):
+class Issue(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length= 255, default='empty')
     creation_date_time = models.DateField(auto_now_add=True)
+
+
+    def all_posts(self):
+        return self.post_set.all()
 
 
     def current_count(self):
@@ -29,14 +33,14 @@ class MainPage(models.Model):
 
 
 class Post(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, null=True, blank=True)
     title = models.CharField(max_length= 255)
     description = models.CharField(max_length= 255, default='empty')
     url = models.URLField(blank=True, null=True)
     slug = models.SlugField()
     creation_time = models.DateTimeField(auto_now_add=True)
     modification_time = models.DateTimeField(auto_now=True)
-    mainpage_rel = models.ForeignKey(MainPage, default=1)
+    issue_rel = models.ForeignKey(Issue, default=1)
 
 
     def is_recent(self):

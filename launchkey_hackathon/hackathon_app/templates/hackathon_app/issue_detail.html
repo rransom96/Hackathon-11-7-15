@@ -1,0 +1,19 @@
+{% extends 'hackathon_app/base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+{% block content %}
+    <h2>Issue Detail</h2>
+
+
+   {% for issue in issue_list %}
+       fsdfsdf
+        <a href="{% url 'post_detail' issue.post.id %}"><p>Issue: {{ issue.post.title}}</p></a>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+{#        <p><a class="btn btn-primary btn-block" href="{% url 'issue_edit' issue.id %}" role="button" style="display: inline-block;">Edit</a></p>#}
+{#        <p><a class="btn btn-danger btn-block" href="{% url 'issue_delete' issue.id %}" role="button" style="display: inline-block;">Delete</a></p>#}
+    {% endif %}
+
+{% endblock %}

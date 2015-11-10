@@ -1,0 +1,48 @@
+{% extends 'hackathon_app/base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+{% block content %}
+{# <div class="jumbotron">#}
+{#    <div class="row">#}
+{#        <div class="col-xs-12 col-sm-10">#}
+            <h2 class="text-center login_title" style="margin-top: 60px; color: white; border-color: green ">Issues</h2>
+            {% for issue in issue_list %}
+                <div class="jumbotron">
+                <i class="fa fa-issue fa-4x text-right"></i>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-10">
+
+                            <ul>
+
+                                <li class="bookmark_list text-left">
+                                    <a href="{% url 'issue_detail' issue.id %}">{{ issue.name }}</a>
+                                </li>
+
+
+
+
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+            {% if is_paginated %}
+                {% if page_obj.has_previous %}
+                    <a href="{% url 'list_bookmarks' %}?page={{ page_obj.previous_page_number }}"><-Prev</a>
+                {% endif %}
+            {{ page_obj }}
+                {% if page_obj.has_next %}
+                    <a href="{% url 'list_bookmarks' %}?page={{ page_obj.next_page_number }}">Next -></a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="col-xs-12 col-sm-2"></div>
+
+{% endblock %}
+

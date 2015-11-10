@@ -1,17 +1,17 @@
 from django.contrib import admin
-from hackathon_app.models import MainPage, Post, Comment, PostUpvote, CommentUpvote
+from hackathon_app.models import Issue, Post, Comment, PostUpvote, CommentUpvote
 
 
 # Register your models here.
-@admin.register(MainPage)
-class MainPageAdmin(admin.ModelAdmin):
+@admin.register(Issue)
+class IssueAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'description', 'creation_date_time')
 
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = (
-    'user', 'mainpage_rel', 'title', 'description', 'url', 'slug', 'creation_time', 'modification_time', 'is_recent',
+    'user', 'issue_rel', 'title', 'description', 'url', 'slug', 'creation_time', 'modification_time', 'is_recent',
     'num_upvotes', 'karma')
     prepopulated_fields = {"slug": ("title",)}
 
