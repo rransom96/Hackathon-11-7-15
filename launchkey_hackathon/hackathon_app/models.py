@@ -39,6 +39,9 @@ class Post(models.Model):
     modification_time = models.DateTimeField(auto_now=True)
     subissue_rel = models.ForeignKey(SubIssue, default=1)
 
+    @property
+    def all_comments(self):
+        return self.comment_set.all()
 
 
     def is_recent(self):
@@ -59,10 +62,17 @@ class Comment(models.Model):
     modified_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "User:{}, comment_text: {}, post_rel: {}, created_time: {}, last_modified".format(self.user,
-                                                                                    self.comment_text, self.post_rel,
-                                                                                    self.created_time,
-                                                                                    self.modified_time)
+        return "comment_text: {}".format(self.comment_text)
+
+class SubComment(models.Model):
+    user = models.ForeignKey(User)
+    comment_text = models.CharField(max_length= 255, default='empty')
+    comment_rel = models.ForeignKey(Comment)
+    created_time = models.DateTimeField(auto_now_add=True)
+    modified_time = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "comment_text: {}".format(self.comment_text)
 
 class PostUpvote(models.Model):
     post_upvotes = models.ForeignKey(Post)

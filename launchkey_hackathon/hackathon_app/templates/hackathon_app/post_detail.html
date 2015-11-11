@@ -2,3 +2,14 @@
 {% load bootstrap3 %}
 {% load staticfiles %}
 
+{% block content %}
+    <h2 class=" issues_title">{{ post.title }}</h2>
+
+
+   {% for comment in post.all_comments %}
+       <div class="jumbotron container-fluid">
+         <a href="{% url 'issue_detail' post.id %}"><h2 class="issue_list text-left">{{ comment.comment_text}}</h2></a>
+       </div>
+    {% endfor %}
+{% endblock %}
+

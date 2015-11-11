@@ -1,5 +1,5 @@
 from django.contrib import admin
-from hackathon_app.models import Issue, Post, Comment, PostUpvote, CommentUpvote, SubIssue
+from hackathon_app.models import Issue, Post, Comment, PostUpvote, CommentUpvote, SubIssue, SubComment
 
 
 # Register your models here.
@@ -23,6 +23,11 @@ class PostAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
+    list_display = ('comment_text', 'user', 'created_time', 'modified_time')
+
+
+@admin.register(SubComment)
+class SubCommentAdmin(admin.ModelAdmin):
     list_display = ('comment_text', 'user', 'created_time', 'modified_time')
 
 
