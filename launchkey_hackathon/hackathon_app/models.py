@@ -43,6 +43,10 @@ class Post(models.Model):
     def all_comments(self):
         return self.comment_set.all()
 
+    @property
+    def all_sub_comments(self):
+        return self.comment_set.all().subcomment_set.all()
+
 
     def is_recent(self):
         return timezone.now() - datetime.timedelta(days=1) <= self.creation_time
@@ -60,6 +64,10 @@ class Comment(models.Model):
     post_rel = models.ForeignKey(Post)
     created_time = models.DateTimeField(auto_now_add=True)
     modified_time = models.DateTimeField(auto_now=True)
+
+    @property
+    def all_sub_comments(self):
+        return self.subcomment_set.all()
 
     def __str__(self):
         return "comment_text: {}".format(self.comment_text)

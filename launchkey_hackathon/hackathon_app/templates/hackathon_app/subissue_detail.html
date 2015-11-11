@@ -9,6 +9,7 @@
    {% for post in subissue.all_posts %}
        <div class="jumbotron container-fluid">
          <a href="{% url 'post_detail' post.id %}"><h2 class="issue_list text-left">{{ post.title}}</h2></a>
+
        </div>
     {% endfor %}
 {% endblock %}

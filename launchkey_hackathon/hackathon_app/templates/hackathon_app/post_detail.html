@@ -9,7 +9,13 @@
    {% for comment in post.all_comments %}
        <div class="jumbotron container-fluid">
          <a href="{% url 'issue_detail' post.id %}"><h2 class="issue_list text-left">{{ comment.comment_text}}</h2></a>
+       <h4>comments:</h4>
+       {% for subcomment in comment.all_sub_comments %}
+                <a href="{% url 'issue_detail' post.id %}"><h2 class="issue_list text-left subcomment_name">{{ subcomment.user}}</h2></a>
+                <a href="{% url 'issue_detail' post.id %}"><h5 class="issue_list text-left subcomment">{{ subcomment.comment_text}}</h5></a>
+           {% endfor %}
        </div>
+
     {% endfor %}
 {% endblock %}
 

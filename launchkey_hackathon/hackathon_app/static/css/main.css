@@ -14,3 +14,14 @@
     margin-top: -39px;
    text-align: center;
 }
+
+.subcomment{
+  text-align: left;
+    margin-top: 40px;
+    margin-top: -40px;
+}
+
+.subcomment_name{
+  text-align: left;
+    margin-top: 10px;
+}
