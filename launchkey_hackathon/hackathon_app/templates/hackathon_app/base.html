@@ -94,18 +94,26 @@
         </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-
-
-
     {% endif %}
+
+
 
     {% block content %}
 
     {% endblock %}
 
 
+
+
+
+
     <script src="{% static 'js/jquery.min.js' %}"></script>
     {% bootstrap_javascript %}
+
+    {% block files %}
+
+    {% endblock %}
+
 
 </body>
 </html>
