@@ -4,13 +4,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-{#    <link href="{% static 'css/main.css' %}" rel="stylesheet">#}
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    {% bootstrap_javascript %}
-    {% bootstrap_css %}
-
+    <title>Politics App</title>
+    <!--Meta-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+     <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--BOOTSTRAP-->
+    {% bootstrap_css %}
+    <!-- animate.css -->
+    <link rel="stylesheet" href="{% static 'assets/animate/animate.css' %}"  />
+    <link rel="stylesheet" href="{% static 'assets/animate/set.css' %}" />
+    <!-- gallery CSS -->
+    <link rel="stylesheet" href="{% static 'assets/gallery/blueimp-gallery.min.css' %}">
+    <!--user CSS-->
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}" >
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
 </head>
 <body>
 
@@ -26,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Politics App</a>
+          <i class="fa fa-flag"></i>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -65,7 +76,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Politcs App</a>
+          <i class="fa fa-flag fa-5x"></i>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -88,13 +99,14 @@
 
     {% endif %}
 
-      {% block content %}
+    {% block content %}
 
-      {% endblock %}
+    {% endblock %}
 
-{#    <script src="{% static 'js/jquery.min.js' %}"></script>#}
-{#    <script src="{% static 'js/bootstrap.min.js' %}"#}
-{#    <script src="{% static 'js/main.js' %}"></script>#}
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    {% bootstrap_javascript %}
+
 </body>
 </html>
 

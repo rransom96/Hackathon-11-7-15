@@ -64,7 +64,7 @@ p{font-size:1em;line-height: 1.7em; margin-bottom: 1.7em;}
 .carousel-indicators{bottom: 0;}
 
 /*works*/
-#works{padding-top:6em;}
+#works{margin-top: -20px;}
 #works figcaption a{border:1px solid #fff;margin-top: 1em;display: inline-block;color: #fff;padding: 0 2em;}
 #works figcaption a:hover{text-decoration: none;padding: 0 3em;}
 /*works*/
@@ -140,7 +140,7 @@ p{font-size:1em;line-height: 1.7em; margin-bottom: 1.7em;}
 	h2.text-center{text-align: left;font-size: 1.7em;}
 	h4 {font: 300 1.2em Roboto,Arial,Helvetica;}
 	#partners h2{padding: 0 1em;} 
-	#works {padding-top: 5em;}
+
 
 	.partners{display: block;float: left;}
 	.partners img{width: 120px;}
@@ -155,7 +155,7 @@ p{font-size:1em;line-height: 1.7em; margin-bottom: 1.7em;}
 
 	.grid.team div{margin: 0;padding: 0;}
 	figure.effect-chico figcaption {padding: 1.5em;}
-	.footer{margin-top: 2em;padding-bottom: 2em;}
+
 }
 
 
