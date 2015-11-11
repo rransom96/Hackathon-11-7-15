@@ -2,9 +2,8 @@ from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render, render_to_response
 from django.utils import timezone
 from django.views.generic import View, ListView, CreateView, DeleteView, UpdateView, DetailView
-from hackathon_app.models import Post, Issue, SubIssue
-from hackathon_app.forms import PostForm, IssueForm
-
+from hackathon_app.models import Post, Issue, SubIssue, SubComment
+from hackathon_app.forms import PostForm, IssueForm, SubCommentForm
 
 
 class WelcomePage(View):
@@ -79,6 +78,17 @@ class CreatePost(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super(CreatePost, self).form_valid(form)
+
+
+class CreateSubComment(CreateView):
+    model = SubComment
+    form_class = SubCommentForm
+    success_url = reverse_lazy('post_detail')
+    template_name = 'hackathon_app/post_create.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super(CreateSubComment, self).form_valid(form)
 
 
 class EditPost(UpdateView):

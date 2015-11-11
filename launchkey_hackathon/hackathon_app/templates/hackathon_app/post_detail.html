@@ -13,7 +13,9 @@
        {% for subcomment in comment.all_sub_comments %}
                 <a href="{% url 'issue_detail' post.id %}"><h2 class="issue_list text-left subcomment_name">{{ subcomment.user}}</h2></a>
                 <a href="{% url 'issue_detail' post.id %}"><h5 class="issue_list text-left subcomment">{{ subcomment.comment_text}}</h5></a>
+
            {% endfor %}
+       <a href="{% url 'subcomment_create' post.id %}"><button> add comment</button></a>
        </div>
 
     {% endfor %}

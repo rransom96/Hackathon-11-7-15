@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from users.views import CreateUser
 from hackathon_app.views import WelcomePage, ListPosts, CreatePost, EditPost, DeletePost, PostDetail, IssueDetail, \
-    ListIssues, SubIssueDetail
+    ListIssues, SubIssueDetail, CreateSubComment
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -34,7 +34,7 @@ urlpatterns = [
 
     url(r'^subissues/(?P<pk>\d+)/$', SubIssueDetail.as_view(),name='subissue_detail'),
 
-
+    url(r'^create_subcomment/$', CreateSubComment.as_view(), name='subcomment_create'),
     url(r'^posts/(?P<pk>\d+)/$', PostDetail.as_view(),name='post_detail'),
     url(r'^posts/', ListPosts.as_view(), name="posts"),
     url(r'^create_post/$', CreatePost.as_view(), name='post_create'),

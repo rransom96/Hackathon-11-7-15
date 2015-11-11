@@ -4,9 +4,9 @@
 
 
 {% block content %}
-    <h2>Create Post</h2>
+    <h2>Create SubComment</h2>
     <!-- Django does not provide the form tag -->
-    <form method="post" action="{% url 'post_create' %}" class="form">
+    <form method="post" action="{% url 'subcomment_create' %}" class="form">
         <!-- CSRF Token prevents cross site attacks and is required -->
         {% csrf_token %}
         {% bootstrap_form form %}
