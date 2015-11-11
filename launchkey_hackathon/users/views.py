@@ -34,12 +34,12 @@ def login(request):
                 confirm = api.authorize(username, session, user_push_id)
                 while True:
                     response = api.poll_request(confirm)
-                    time.sleep(10)
-                    if api.is_authorized(confirm, response['auth']):
+                    if 'auth' in response and api.is_authorized(confirm, response['auth']):
                         django.contrib.auth.login(request, user)
                         return HttpResponseRedirect(reverse_lazy('home'))
                     else:
                         pass
+                    time.sleep(1)
             else:
                 pass
         else:
@@ -48,8 +48,8 @@ def login(request):
         return views.login(request)
 
 
-# @login_required
-# def logout(request):
-#     api = launchkey.API(app_key=app,private_key=private,app_secret=secret)
-#     api.logout()
+@login_required
+def logout(request):
+    api = launchkey.API(app_key=app,private_key=private,app_secret=secret)
+    api.logout()
 
