@@ -1,5 +1,5 @@
 from django.contrib import admin
-from hackathon_app.models import Issue, Post, Comment, PostUpvote, CommentUpvote
+from hackathon_app.models import Issue, Post, Comment, PostUpvote, CommentUpvote, SubIssue
 
 
 # Register your models here.
@@ -8,12 +8,17 @@ class IssueAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'description', 'creation_date_time')
 
 
+@admin.register(SubIssue)
+class SubIssueAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'description', 'creation_date_time')
+
+
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = (
-    'user', 'issue_rel', 'title', 'description', 'url', 'slug', 'creation_time', 'modification_time', 'is_recent',
-    'num_upvotes', 'karma')
-    prepopulated_fields = {"slug": ("title",)}
+    'user', 'subissue_rel', 'title', 'description', 'creation_time', 'modification_time', 'is_recent',
+    'num_upvotes')
+
 
 
 @admin.register(Comment)

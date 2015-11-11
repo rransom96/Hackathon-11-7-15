@@ -18,8 +18,7 @@ from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from users.views import CreateUser
 from hackathon_app.views import WelcomePage, ListPosts, CreatePost, EditPost, DeletePost, PostDetail, IssueDetail, \
-    ListIssues, CreateIssue, EditIssue, DeleteIssue
-
+    ListIssues, SubIssueDetail
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -29,11 +28,12 @@ urlpatterns = [
     url(r'^register/', CreateUser.as_view(), name='register'),
     url(r'^$', WelcomePage.as_view(), name="home" ),
 
+
     url(r'^issues/(?P<pk>\d+)/$', IssueDetail.as_view(),name='issue_detail'),
-    url(r'^issues/', ListIssues.as_view(), name="issues"),
-    url(r'^create_issue/$', CreateIssue.as_view(), name='issue_create'),
-    url(r'^update_issue/(?P<pk>\d+)', EditIssue.as_view(), name='issue_edit'),
-    url(r'^delete_issue/(?P<pk>\d+)', DeleteIssue.as_view(), name='issue_delete'),
+    url(r'^issues/', ListIssues.as_view(), name="issue_list"),
+
+    url(r'^subissues/(?P<pk>\d+)/$', SubIssueDetail.as_view(),name='subissue_detail'),
+
 
     url(r'^posts/(?P<pk>\d+)/$', PostDetail.as_view(),name='post_detail'),
     url(r'^posts/', ListPosts.as_view(), name="posts"),

@@ -6,7 +6,7 @@ from hackathon_app.models import Post, Issue
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('issue_rel','title',)
+        fields = ('subissue_rel','title',)
         widgets = {
             'message': Textarea(attrs={'rows': 2})
         }

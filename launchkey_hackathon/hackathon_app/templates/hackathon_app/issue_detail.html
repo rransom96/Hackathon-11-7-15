@@ -3,17 +3,44 @@
 {% load staticfiles %}
 
 {% block content %}
-    <h2>Issue Detail</h2>
+    <h2 class=" issues_title">{{ issue.name }}</h2>
 
 
-   {% for issue in issue_list %}
-       fsdfsdf
-        <a href="{% url 'post_detail' issue.post.id %}"><p>Issue: {{ issue.post.title}}</p></a>
+   {% for subissue in issue.all_sub_issues %}
+       <div class="jumbotron container-fluid">
+         <a href="{% url 'subissue_detail' subissue.id  %}"><h2 class="issue_list text-left">{{ subissue.name}}</h2></a>
+       </div>
+{#        <a href="{% url 'rater_detail' ratings.rater.id %}"><p>Raters: {{ ratings.rater.id }}</p></a>#}
     {% endfor %}
 
-    {% if user.is_authenticated %}
-{#        <p><a class="btn btn-primary btn-block" href="{% url 'issue_edit' issue.id %}" role="button" style="display: inline-block;">Edit</a></p>#}
-{#        <p><a class="btn btn-danger btn-block" href="{% url 'issue_delete' issue.id %}" role="button" style="display: inline-block;">Delete</a></p>#}
-    {% endif %}
+
+{#    <h2 class=" issues_title">Issues</h2>#}
+{#            {% for issue in issue_list %}#}
+{#                <div class="jumbotron container-fluid">#}
+{#                <i class="fa fa-issue fa-4x text-right"></i>#}
+{#                    <div class="row">#}
+{#                        <div class="col-xs-12 col-sm-10">#}
+{##}
+{##}
+{##}
+{#                                <h2 class="issue_list text-left">#}
+{#                                    <a href="{% url 'issue_detail' issue.id %}">{{ issue.name }}</a>#}
+{##}
+{#                                </h2>#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{#            {% endfor %}#}
+
+
 
 {% endblock %}

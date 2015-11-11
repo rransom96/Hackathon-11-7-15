@@ -37,15 +37,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <i class="fa fa-flag"></i>
+         <a href="{% url 'home' %}"><i class="fa fa-flag fa-5x"></i></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{% url 'post_create' %}">Create Post<span class="sr-only">(current)</span></a></li>
-{#            <li><a href="{% url 'list_profile' %}">My Post</a></li>#}
-            <li><a href="{% url 'posts' %}">All Posts</a></li>
-
+            <li><a href="{% url 'issue_list' %}">All Issues</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -76,7 +73,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <i class="fa fa-flag fa-5x"></i>
+          <a href="{% url 'home' %}"><i class="fa fa-flag fa-5x"></i></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

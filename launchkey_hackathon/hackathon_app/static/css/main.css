@@ -1,0 +1,16 @@
+.jumbotron{
+    width: 70%;
+    margin: auto 20%;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    height: 100px;
+}
+
+.issues_title{
+    text-align: center;
+}
+
+.issue_list {
+    margin-top: -39px;
+   text-align: center;
+}
