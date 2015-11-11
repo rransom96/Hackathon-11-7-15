@@ -48,8 +48,8 @@ def login(request):
         return views.login(request)
 
 
-@login_required
-def logout(request):
-    api = launchkey.API(app_key=app,private_key=private,app_secret=secret)
-    api.logout()
+# @login_required
+# def logout(request):
+#     api = launchkey.API(app_key=app,private_key=private,app_secret=secret)
+#     api.logout()
 
